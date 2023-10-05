@@ -1,0 +1,32 @@
+<div class="container text-center">
+  <div class="row d-flex justify-content-center form-signin">
+    <form>
+      <h1 class="h3 mb-3 fw-normal">Dodaj pojazd</h1>
+
+      <div class="container form-floating col col-lg-4">
+        <input type="text" class="form-control m-1" id="floatingInput" name="name" [(ngModel)]="car.name">
+        <label for="floatingInput">Nazwa</label>
+      </div>
+      <div class="container form-floating col col-lg-4">
+        <input type="text" class="form-control m-1" id="floatingPassword"  name="name" [(ngModel)]="car.brand">
+        <label for="floatingPassword">Marka</label>
+      </div>
+      <div class="container form-floating col col-lg-4">
+        <input type="text" class="form-control m-1" id="floatingPassword"  name="name" [(ngModel)]="car.model">
+        <label for="floatingPassword">Model</label>
+      </div>
+      <div class="container form-floating col col-lg-4">
+        <input type="text" class="form-control m-1" id="floatingPassword"  name="year" [(ngModel)]="car.year">
+        <label for="floatingPassword">Rok produkcji</label>
+      </div>
+      <div class="container form-floating col col-lg-4">
+        <input type="text" class="form-control m-1" id="floatingPassword"  name="desc" [(ngModel)]="car.description">
+        <label for="floatingPassword">Opis</label>
+      </div>
+
+      <div class="container form-floating col col-lg-4">
+        <button class="btn btn-lg btn-primary m-1" type="submit" (click)=addCar()>Dodaj</button>
+      </div>
+    </form>
+  </div>
+</div>

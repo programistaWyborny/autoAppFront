@@ -1,0 +1,32 @@
+<div class="container align-items-center justify-content-center justify-content-lg-start">
+    <table class="table">
+      <thead class="thead-dark bg-light">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Opis</th>
+          <th scope="col">Cena</th>
+          <th scope="col">Przebieg</th>
+          <th *ngIf="showCarId" scope="col">Samochód</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let service of services">
+          <td>{{service.id}}</td>
+          <td>{{service.content}}</td>
+          <td>{{service.price}}</td>
+          <td>{{service.milage}}</td>
+          <td *ngIf="showCarId">
+            <a routerLink="/cars/{{service.carId}}">{{service.carId}}</a>
+          </td>
+          <td>
+            <button class="btn btn-primary" routerLink="/services/{{service.id}}">Szczegóły</button>
+          </td>
+          <td>
+            <button class="btn btn-primary" (click)="removeService(service.id)">Usuń</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

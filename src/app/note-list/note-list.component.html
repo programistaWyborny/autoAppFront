@@ -1,0 +1,30 @@
+<div class="container align-items-center justify-content-center justify-content-lg-start">
+    <table class="table">
+      <thead class="thead-dark bg-light">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Treść</th>
+          <th scope="col">Przebieg</th>
+          <th *ngIf="showCarId" scope="col">Samochód</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let note of notes">
+          <td>{{note.id}}</td>
+          <td>{{note.content}}</td>
+          <td>{{note.milage}}</td>
+          <td *ngIf="showCarId">
+            <a routerLink="/cars/{{note.carId}}">{{note.carId}}</a>
+          </td>
+          <td>
+            <button class="btn btn-primary" routerLink="/notes/{{note.id}}">Szczegóły</button>
+          </td>
+          <td>
+            <button class="btn btn-primary" (click)="removeNote(note.id)">Usuń</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

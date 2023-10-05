@@ -1,0 +1,6 @@
+<div *ngIf="this.alertService.alerts">
+    <div *ngFor="let alert of this.alertService.alerts" class="alert alert-danger alert-dismissible" role="alert">
+        <div>{{alert.content}}</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="clearAlert()"></button>
+    </div>
+</div>

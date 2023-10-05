@@ -1,0 +1,25 @@
+<header class="p-3 text-bg-dark">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a *ngIf="isAuthenticated()" routerLink="/cars" class="nav-link px-2 text-white">Auta</a></li>
+                <li><a *ngIf="isAuthenticated()" routerLink="/notes" class="nav-link px-2 text-white">Notatki</a></li>
+                <li><a *ngIf="isAuthenticated()" routerLink="/fuelings" class="nav-link px-2 text-white">Tankowania</a></li>
+                <li><a *ngIf="isAuthenticated()" routerLink="/services" class="nav-link px-2 text-white">Usługi</a></li>
+                <li><a *ngIf="isAuthenticated()" routerLink="/fuelings" class="nav-link px-2 text-white">Statystyki</a></li>
+            </ul>
+
+            <div class="text-end">
+                <div *ngIf="isAuthenticated()" class="justify-content-center">Witaj: {{authenticationService.authenticatedUser}}</div>
+                <button *ngIf="isAuthenticated()" routerLink="/logout" type="button"
+                    class="btn btn-outline-light me-2">Wyloguj</button>
+                <button *ngIf="isAuthenticated() === false" routerLink="/login" type="button"
+                    class="btn btn-outline-light me-2">Zaloguj</button>
+                <button *ngIf="isAuthenticated() === false" routerLink="/register" type="button"
+                    class="btn btn-warning">Rejestracja</button>
+            </div>
+        </div>
+    </div>
+
+</header>

@@ -1,0 +1,32 @@
+<div class="container align-items-center justify-content-center justify-content-lg-start">
+    <table class="table">
+      <thead class="thead-dark bg-light">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Stan licznika</th>
+          <th scope="col">Ilosc paliwa</th>
+          <th scope="col">Cena</th>
+          <th *ngIf="showCarId" scope="col">Samochód</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let fueling of fuelings">
+          <td>{{fueling.id}}</td>
+          <td>{{fueling.state}}</td>
+          <td>{{fueling.volume}}</td>
+          <td>{{fueling.price}}</td>
+          <td *ngIf="showCarId">
+            <a routerLink="/cars/{{fueling.carId}}">{{fueling.carId}}</a>
+          </td>
+          <td>
+            <button class="btn btn-primary" routerLink="/fuelings/{{fueling.id}}">Szczegóły</button>
+          </td>
+          <td>
+            <button class="btn btn-primary" (click)="removeFueling(fueling.id)">Usuń</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

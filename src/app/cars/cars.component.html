@@ -1,0 +1,31 @@
+<div class="container align-items-center justify-content-center justify-content-lg-start">
+  <button class="btn btn-success m-1" (click)="newCar()">Dodaj pojazd</button>
+  <table class="table">
+    <thead class="thead-dark bg-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nazwa</th>
+        <th scope="col">Marka</th>
+        <th scope="col">Model</th>
+        <th scope="col">Rok produkcji</th>
+        <th scope="col">Opis</th>
+        <th scope="col">Właściciel</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of cars">
+        <td>{{car.id}}</td>
+        <td>{{car.name}}</td>
+        <td>{{car.brand}}</td>
+        <td>{{car.model}}</td>
+        <td>{{car.year}}</td>
+        <td>{{car.description}}</td>
+        <td>{{car.username}}</td>
+        <td>
+          <button class="btn btn-primary" routerLink="/cars/{{car.id}}">Szczegóły</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,30 @@
+<div class="container text-center">
+    <div class="row d-flex justify-content-center form-signin">
+        <form>
+            <h1 class="h3 mb-3 fw-normal">Dodaj tankowanie</h1>
+
+            <div class="container form-floating col col-lg-4">
+                <input type="text" class="form-control m-1" id="floatingLabel" name="name" [(ngModel)]="fueling.state">
+                <label for="floatingLabel">Stan licznika</label>
+            </div>
+            <div class="container form-floating col col-lg-4">
+                <input type="text" class="form-control m-1" id="floatingLabel" name="name" [(ngModel)]="fueling.volume">
+                <label for="floatingLabel">Ilosc paliwa</label>
+            </div>
+            <div class="container form-floating col col-lg-4">
+                <input type="text" class="form-control m-1" id="floatingLabel" name="name" [(ngModel)]="fueling.price">
+                <label for="floatingLabel">Cena</label>
+            </div>
+            <div class="container form-floating col col-lg-4">
+                <select *ngIf="cars.length" type="number" class="form-select m-1" id="floatingSelect" name="carId" [(ngModel)]="fueling.carId" >
+                    <option *ngFor="let car of cars" [ngValue]="car.id">{{car.name}} {{car.model}}</option>
+                </select>
+                <label for="floatingSelect">Samochód</label>
+            </div>
+
+            <div class="container form-floating col col-lg-4">
+                <button class="btn btn-lg btn-primary m-1" type="submit" (click)=addFueling()>Dodaj</button>
+            </div>
+        </form>
+    </div>
+</div>

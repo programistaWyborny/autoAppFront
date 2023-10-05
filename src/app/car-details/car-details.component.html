@@ -1,0 +1,47 @@
+<div class="container align-items-center justify-content-center justify-content-lg-start">
+    <div class="container">
+        <button *ngIf="this.confirmationNeeded === false" class="btn btn-warning m-1" (click)="startRemoving()">Usuń pojazd</button>
+        <button *ngIf="this.confirmationNeeded === false" class="btn btn-primary m-1" (click)="shareCar()">Udostępnij</button>
+        <button *ngIf="this.confirmationNeeded === false" class="btn btn-primary m-1" (click)="addNote()">Dodaj notatkę</button>
+        <button *ngIf="this.confirmationNeeded === false" class="btn btn-primary m-1" (click)="addFueling()">Dodaj tankowanie</button>
+        <button *ngIf="this.confirmationNeeded === false" class="btn btn-primary m-1" (click)="addService()">Dodaj usługę</button>
+    </div>
+    <p *ngIf="this.confirmationNeeded" class="m-1">Czy na pewno chcesz usunąć?</p>
+    <div class="container">
+        <button *ngIf="this.confirmationNeeded" class="btn btn-danger m-1" (click)="removeCar()">Usuń</button>
+        <button *ngIf="this.confirmationNeeded" class="btn btn-primary m-1" (click)="cancel()">Anuluj</button>
+    </div>
+    <div class="container">
+    </div>
+    <table class="table">
+        <thead class="thead-dark bg-light">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nazwa</th>
+                <th scope="col">Marka</th>
+                <th scope="col">Model</th>
+                <th scope="col">Rok</th>
+                <th scope="col">Opis</th>
+                <th scope="col">Właściciel</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{car?.id}}</td>
+                <td>{{car?.name}}</td>
+                <td>{{car?.brand}}</td>
+                <td>{{car?.model}}</td>
+                <td>{{car?.year}}</td>
+                <td>{{car?.description}}</td>
+                <td>{{car?.username}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <strong>Notatki</strong>
+    <app-note-list [notes]="notes" [showCarId]="false"></app-note-list>
+    <strong>Tankowania</strong>
+    <app-fueling-list [fuelings]="fuelings" [showCarId]="false"></app-fueling-list>
+    <strong>Usługi</strong>
+    <app-service-list [services]="services" [showCarId]="false"></app-service-list>
+</div>

@@ -1,0 +1,30 @@
+<div class="container text-center">
+    <div class="row d-flex justify-content-center form-signin">
+        <form>
+            <h1 class="h3 mb-3 fw-normal">Dodaj usługę</h1>
+
+            <div class="container form-floating col col-lg-4">
+                <input type="text" class="form-control m-1" id="floatingLabel" name="name" [(ngModel)]="service.content">
+                <label for="floatingLabel">Opis usługi</label>
+            </div>
+            <div class="container form-floating col col-lg-4">
+                <input type="text" class="form-control m-1" id="floatingLabel" name="name" [(ngModel)]="service.price">
+                <label for="floatingLabel">Cena</label>
+            </div>
+            <div class="container form-floating col col-lg-4">
+                <input type="text" class="form-control m-1" id="floatingLabel" name="name" [(ngModel)]="service.milage">
+                <label for="floatingLabel">Przebieg</label>
+            </div>
+            <div class="container form-floating col col-lg-4">
+                <select *ngIf="cars.length" type="number" class="form-select m-1" id="floatingSelect" name="carId" [(ngModel)]="service.carId" >
+                    <option *ngFor="let car of cars" [ngValue]="car.id">{{car.name}} {{car.model}}</option>
+                </select>
+                <label for="floatingSelect">Samochód</label>
+            </div>
+
+            <div class="container form-floating col col-lg-4">
+                <button class="btn btn-lg btn-primary m-1" type="submit" (click)=addService()>Dodaj</button>
+            </div>
+        </form>
+    </div>
+</div>
